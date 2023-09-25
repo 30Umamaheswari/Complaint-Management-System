@@ -13,7 +13,7 @@ def submit_msg(c, a):
     # start TLS for security
     s.starttls()
 
-    s.login("kpmumamaheswari@gmail.com", "hivqibjtpsfszner")
+    s.login("Sender_Mail_id", "Password")
 
     subject = "Complaint Submission Confirmation"
     recipient_name = a
@@ -23,7 +23,7 @@ def submit_msg(c, a):
         Dear {recipient_name},
 
         We are writing to inform you that your complaint has been successfully submitted. Your complaint token was generated successfully.
-        I inform you that your issuse will be resolved within 48 hours.
+        I inform you that your issue will be resolved within 48 hours.
 
         If you have any further questions or require assistance, please do not hesitate to contact our customer support team.
 
@@ -35,11 +35,11 @@ def submit_msg(c, a):
     message['Subject'] = subject
 
     # sending the mail
-    s.sendmail("kpmumamaheswari@gmail.com", mail, message.as_string())
+    s.sendmail("Sender_mail_id", mail, message.as_string())
     if s:
         msg = 'Your Complaint has been successfully submitted. Please check your email for further details.'
 
-    # terminating the session
+    # Terminating the session
     s.quit()
 
     return msg
